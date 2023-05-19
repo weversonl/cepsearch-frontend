@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# cepsearch frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### cepsearch frontend to consumes REST API
 
-## Available Scripts
+Frontend developed to consume the [cepsearch API]("https://github.com/WeversonL/cepsearch.git"), which I developed to improve my knowledge in Java REST API's
 
-In the project directory, you can run:
+## Get Started
 
-### `npm start`
+### Running the application with Docker
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Make sure you have Docker installed on your machine. [Dockerhub]("https://hub.docker.com/r/weversonlemos/cepsearch-frontend")
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Clone the image
 
-### `npm test`
+        docker pull weversonlemos/cepsearch-frontend:latest
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Start container with image
 
-### `npm run build`
+        docker run --name cepsearch-frontend -p 3000:3000 cepsearch-frontend:latest
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Open your browser and type in the URL bar
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        http://localhost:3000/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Run using npm
 
-### `npm run eject`
+Make sure you have Nodejs and NPM installed on your machine.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository or download the source code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        git clone https://github.com/WeversonL/cepsearch-frontend.git
+        cd cepsearch-frontend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Download npm dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+        npm install
 
-## Learn More
+3. Run the npm project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+        npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Open your browser and type in the URL bar
 
-### Code Splitting
+        http://localhost:3000/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Compile the project in a production-optimized manner, with performance optimizations with minifications
 
-### Analyzing the Bundle Size
+Make sure you have Nodejs, NPM and NPX installed on your machine.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Clone the repository or download the source code
 
-### Making a Progressive Web App
+        git clone https://github.com/WeversonL/cepsearch-frontend.git
+        cd cepsearch-frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+2. Download npm dependencies
 
-### Advanced Configuration
+        npm ci
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. Build project
 
-### Deployment
+        npm run build
+        
+4. Install serve
+        
+        [⚠️ If you only want to use it locally and not install it globally, use: `npm install serve`]
+        npm install -g serve 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. Run project
 
-### `npm run build` fails to minify
+        npx serve build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+6. Open your browser and type in the URL bar
+
+        http://localhost:3000/
+
+### Build your own docker image
+
+Make sure you have Docker installed on your machine.
+
+1. Clone the repository or download the source code
+
+        git clone https://github.com/WeversonL/cepsearch-frontend.git
+        cd cepsearch-frontend
+
+2. Run docker build
+
+        docker build -t {YOUR_IMAGE_NAME}:{YOUR_IMAGE_TAG} .
+
+⚠️ Still in development
+
+## License
+
+`cepsearch-frontend` is released under the [GNU General Public License, Version 2](LICENSE)
+    
+        Copyright (C) 2022 Weverson Lemos
+
+        This program is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation; either version 2
+        of the License, or (at your option) any later version
