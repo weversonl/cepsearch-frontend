@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { VscError } from 'react-icons/vsc';
 import "./style.css";
 
 import api from "./services/cepSearchApi";
+import ErrorComponent from "./components/ErrorComponent";
 
 function App() {
   const [input, setInput] = useState("");
@@ -62,15 +62,6 @@ function App() {
         </main>
       )}
     </div>
-  );
-}
-
-function ErrorComponent() {
-  return (
-    <main className="cepNotFound">
-      <VscError size={120} color="red" className="errorLogo" />
-      <span className="messageError">Não foi possível buscar o CEP informado!</span>
-    </main>
   );
 }
 
