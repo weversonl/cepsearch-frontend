@@ -2,7 +2,7 @@
 
 ### cepsearch frontend to consumes REST API
 
-Frontend developed to consume the [cepsearch API]("https://github.com/WeversonL/cepsearch.git"), which I developed to improve my knowledge in Java REST API's
+Frontend developed to consume the [cepsearch API](https://github.com/WeversonL/cepsearch.git), which I developed to improve my knowledge in Java REST API's
 
 ## Get Started
 
@@ -10,9 +10,9 @@ Frontend developed to consume the [cepsearch API]("https://github.com/WeversonL/
 
 ### Run backend
 
-To run the backend of the application, follow the steps in this [repository]("https://github.com/WeversonL/cepsearch.git")
+To run the backend of the application, follow the steps in this [repository](https://github.com/WeversonL/cepsearch.git)
 
-Make sure you have Docker installed on your machine. [Dockerhub]("https://hub.docker.com/r/weversonlemos/cepsearch-frontend")
+Make sure you have Docker installed on your machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/cepsearch-frontend)
 
 1. Clone the image
 
