@@ -8,6 +8,10 @@ Frontend developed to consume the [cepsearch API]("https://github.com/WeversonL/
 
 ### Running the application with Docker
 
+### Run backend
+
+To run the backend of the application, follow the steps in this [repository]("https://github.com/WeversonL/cepsearch.git")
+
 Make sure you have Docker installed on your machine. [Dockerhub]("https://hub.docker.com/r/weversonlemos/cepsearch-frontend")
 
 1. Clone the image
