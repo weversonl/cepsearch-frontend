@@ -1,8 +1,7 @@
 FROM node:19.8-alpine
 WORKDIR /app
 COPY . .
-RUN npm ci
-RUN npm run build
+RUN npm ci && npm run build
 ENV NODE_ENV production
 EXPOSE 3000
 
