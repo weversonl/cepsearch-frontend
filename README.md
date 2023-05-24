@@ -4,23 +4,29 @@
 
 Frontend developed to consume the [cepsearch API](https://github.com/WeversonL/cepsearch.git), which I developed to improve my knowledge in Java REST API's
 
+## Requirements
+
+1. [Docker](https://docs.docker.com/engine/install/)
+2. [Docker-compose](https://docs.docker.com/compose/)
+
+### Optional dependencies
+
+1. [Nodejs / npm](https://nodejs.org/en/download)
+2. [Npx](https://www.npmjs.com/package/npx)
+
+
 ## Get Started
 
-### Running the application with Docker
+### Running the application with docker-compose
 
-### Run backend
+1. Clone the repository or download the source code
 
-To run the backend of the application, follow the steps in this [repository](https://github.com/WeversonL/cepsearch.git)
+        git clone https://github.com/WeversonL/cepsearch-frontend.git
+        cd cepsearch-frontend
 
-Make sure you have Docker installed on your machine. [Dockerhub](https://hub.docker.com/r/weversonlemos/cepsearch-frontend)
+2. Start with docker-compose
 
-1. Clone the image
-
-        docker pull weversonlemos/cepsearch-frontend:latest
-
-2. Start container with image
-
-        docker run --name cepsearch-frontend -p 3000:3000 cepsearch-frontend:latest
+        docker-compose up -d
 
 3. Open your browser and type in the URL bar
 
@@ -76,19 +82,6 @@ Make sure you have Nodejs, NPM and NPX installed on your machine.
 6. Open your browser and type in the URL bar
 
         http://localhost:3000/
-
-### Build your own docker image
-
-Make sure you have Docker installed on your machine.
-
-1. Clone the repository or download the source code
-
-        git clone https://github.com/WeversonL/cepsearch-frontend.git
-        cd cepsearch-frontend
-
-2. Run docker build
-
-        docker build -t {YOUR_IMAGE_NAME}:{YOUR_IMAGE_TAG} .
 
 ⚠️ Still in development
 

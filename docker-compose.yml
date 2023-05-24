@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  frontend:
+    depends_on:
+      - backend
+    build: .
+    container_name: cepsearch-frontend
+    networks:
+      - cs-apis
+    ports:
+      - 3000:3000
+
+  backend:
+    image: weversonlemos/cepsearch:latest
+    container_name: cepsearch-backend
+    networks:
+      - cs-apis
+    ports:
+      - 8080:8080
+
+networks:
+  cs-apis:
+    driver: bridge
