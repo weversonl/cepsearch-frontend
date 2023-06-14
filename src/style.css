@@ -87,7 +87,7 @@
     align-items: center;
     flex-direction: column;
     background: #fff;
-    width: 500px;
+    width: 400px;
     min-height: 250px;
     border-radius: 8px;
 }
@@ -100,6 +100,71 @@
 .messageError {
     font-weight: 800;
     margin-top: 16px;
+}
+
+.modalError {
+    width: 400px;
+    min-height: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: modal-appear-animation 0.4s ease-in-out;
+}
+
+@keyframes modal-appear-animation {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.modalError button {
+    background-color: #007213;
+    border-radius: 13px;
+    border: 0;
+    padding: 10px;
+    font-size: 20px;
+    color: #fff;
+    outline: none;
+    margin-top: 10px;
+    width: 180px;
+    font-weight: bold;
+    cursor: pointer;
+    animation: flipTitle 0.5s;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.575);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes flipModal {
+
+    from {
+        transform: rotateX(90deg);
+    }
+
+    to {
+        transform: rotateX(0deg);
+    }
+
 }
 
 @media(max-width: 620px) {

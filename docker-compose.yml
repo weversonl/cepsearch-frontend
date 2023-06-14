@@ -1,23 +1,39 @@
-version: "3.8"
+version: "3.9"
 
 services:
   frontend:
     depends_on:
       - backend
-    build: .
+    image: weversonlemos/cepsearch-frontend:latest
     container_name: cepsearch-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      BACKEND_URL: http://backend:8080/api/cep/
     networks:
       - cs-apis
-    ports:
-      - 3000:3000
 
   backend:
+    depends_on:
+      - cache
     image: weversonlemos/cepsearch:latest
     container_name: cepsearch-backend
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      HOST: redis-container
     networks:
       - cs-apis
+
+  cache:
+    image: redis:latest
+    container_name: redis-container
+    restart: always
     ports:
-      - 8080:8080
+      - "6379:6379"
+    networks:
+      - cs-apis
 
 networks:
   cs-apis:

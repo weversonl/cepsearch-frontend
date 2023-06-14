@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import ReactModal from "react-modal";
 import "./style.css";
 
 import api from "./services/cepSearchApi";
@@ -8,11 +9,19 @@ import ErrorComponent from "./components/ErrorComponent";
 function App() {
   const [input, setInput] = useState("");
   const [cep, setCep] = useState({});
-  const [hasError, setHasError] = useState(false);
+  const [errorModalOpen, setErrorModalOpen] = useState(false);
+
+  function openErrorModal() {
+    setErrorModalOpen(true);
+  }
+
+  function closeErrorModal() {
+    setErrorModalOpen(false);
+  }
 
   async function handleSearch() {
     if (input === "") {
-      alert("Preencha com algum CEP!");
+      openErrorModal();
       return;
     }
 
@@ -20,7 +29,7 @@ function App() {
       const response = await api.get(input);
       setCep(response.data);
     } catch {
-      setHasError(true);
+      openErrorModal();
     } finally {
       setInput("");
     }
@@ -42,7 +51,19 @@ function App() {
         </button>
       </div>
 
-      {hasError && <ErrorComponent />}
+      {errorModalOpen && (
+        <ReactModal
+          className="modalError"
+          isOpen={errorModalOpen}
+          onRequestClose={closeErrorModal}
+          contentLabel="Erro"
+          overlayClassName="modal-overlay"
+          // closeTimeoutMS={10000}
+        >
+          <ErrorComponent />
+          <button onClick={closeErrorModal}>ok</button>
+        </ReactModal>
+      )}
 
       {Object.keys(cep).length > 0 && (
         <main className="main">
@@ -53,11 +74,12 @@ function App() {
             {cep.city} - {cep.state}
           </span>
 
-          {cep.location.coordinates.latitude !== null && (
-            <span>
-              Lat: {cep.location.coordinates.latitude} | Long:{" "}
-              {cep.location.coordinates.longitude}
-            </span>
+          {cep.location.coordinates !== null && (
+            cep.location.coordinates.latitude !== null && (
+              <span>
+                Lat: {cep.location.coordinates.latitude} | Long: {cep.location.coordinates.longitude}
+              </span>
+            )
           )}
         </main>
       )}

@@ -1,8 +1,13 @@
 # cepsearch frontend
 
-### cepsearch frontend to consumes REST API
+## About
 
-Frontend developed to consume the [cepsearch API](https://github.com/WeversonL/cepsearch.git), which I developed to improve my knowledge in Java REST API's
+Frontend developed to consume the [cepsearch API](https://github.com/WeversonL/cepsearch.git), which I developed to improve my knowledge in Java REST API's. React was used in this frontend, along with other technologies such as Docker, docker-compose and Redis in the backend, so that user requests are answered as quickly as possible.
+
+## Screenshot
+
+![frontend_screenshot_default](assets/image1.png)
+![frontend_screenshot_data](assets/image2.png)
 
 ## Requirements
 
