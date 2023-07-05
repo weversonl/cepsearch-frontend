@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.BACKEND_URL || "http://localhost:8080/api/cep/",
+  baseURL: process.env.REACT_APP_BACKEND_URL,
 });
 
 export default api;

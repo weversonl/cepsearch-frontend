@@ -3,7 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import ReactModal from "react-modal";
 import "./style.css";
 
-import api from "./services/cepSearchApi";
+import api from "./services/CepSearchApi";
 import ErrorComponent from "./components/ErrorComponent";
 
 function App() {
