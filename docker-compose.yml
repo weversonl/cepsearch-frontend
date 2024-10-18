@@ -1,41 +1,8 @@
-version: "3.9"
-
 services:
-
   frontend:
-    depends_on:
-      - backend
     image: weversonlemos/cepsearch-frontend:latest
-    container_name: cepsearch-frontend
+    container_name: frontend
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
-      REACT_APP_BACKEND_URL: http://backend:8080/api/cep/
-    networks:
-      - cs-apis
-
-  backend:
-    depends_on:
-      - cache
-    image: weversonlemos/cepsearch:latest
-    container_name: cepsearch-backend
-    restart: always
-    ports:
-      - "8080:8080"
-    environment:
-      HOST: redis-container
-    networks:
-      - cs-apis
-
-  cache:
-    image: redis:latest
-    container_name: redis-container
-    restart: always
-    ports:
-      - "6379:6379"
-    networks:
-      - cs-apis
-
-networks:
-  cs-apis:
-    driver: bridge
+      REACT_APP_BACKEND_URL: http://localhost:9999/api/cep/
