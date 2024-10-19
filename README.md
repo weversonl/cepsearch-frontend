@@ -4,7 +4,7 @@
 
 Frontend developed to consume the [cepsearch API](https://github.com/WeversonL/cepsearch.git), which I developed to improve my knowledge in Java REST API's. React was used in this frontend, along with other technologies such as Docker, docker-compose and Redis in the backend, so that user requests are answered as quickly as possible.
 
-**To view the website live, [click here](https://cepsearch-frontend.vercel.app/)**
+**To view the website deployed, [click here](https://cepsearch.weverson.dev/)**
 
 ## Screenshot
 
